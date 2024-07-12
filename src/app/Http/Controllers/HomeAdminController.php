@@ -14,6 +14,25 @@ use Illuminate\Support\Facades\Mail;
 
 class HomeAdminController extends Controller
 {
+    public function getProductInventory(Request $request)
+    {
+        $product_id = $request->input('product_id');
+        $size = $request->input('size');
+        $color = $request->input('color');
+
+        $inventory = Inventory::where('product_id', $product_id)
+            ->where('size', $size)
+            ->where('color', $color)
+            ->first();
+
+        if ($inventory) {
+            return response()->json(['quantity' => $inventory->quantity]);
+        } else {
+            return response()->json(['quantity' => 0]);
+        }
+    }
+
+
     public function index()
     {
         // Lấy danh sách slider
@@ -54,7 +73,7 @@ class HomeAdminController extends Controller
         // Trả về view home và truyền các biến dữ liệu cần thiết
         return view("home.home", compact("sliders", "categorys", "products", "productsSelling", "categorysLimit", "productsFeatures", "productSalesQuantity"));
     }
-// chi tiết sản phẩm
+    // chi tiết sản phẩm
     public function detail($slug)
     {
         $product = Product::with('inventorys')->where("slug", $slug)->firstOrFail();
@@ -78,9 +97,9 @@ class HomeAdminController extends Controller
 
         // Tìm kiếm inventory_id từ cơ sở dữ liệu
         $inventory = Inventory::where('product_id', $productId)
-                              ->where('size', $sizeId)
-                              ->where('color', $colorId)
-                              ->first();
+            ->where('size', $sizeId)
+            ->where('color', $colorId)
+            ->first();
 
         if ($inventory) {
             // Trả về inventory_id nếu tìm thấy
@@ -90,12 +109,7 @@ class HomeAdminController extends Controller
             return response()->json(['inventory_id' => null]);
         }
     }
-
-
-
-
-
-// tìm kiếm
+    // tìm kiếm
     public function search(Request $request)
     {
         $keywords = $request->keywords_submit;

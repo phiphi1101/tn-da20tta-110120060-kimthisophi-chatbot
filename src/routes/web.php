@@ -10,7 +10,6 @@ use App\Http\Controllers\CustomerAccountController;
 use Illuminate\Support\Facades\Route;
 
 
-
 //man hinh admin
 Route::get('/admin', [AdminController::class, 'loginAdmin'])->name('loginAdmin');
 Route::get('/login', [UserController::class, 'login'])->name('login');
@@ -29,10 +28,9 @@ Route::get('/category/{slug}/{id}', [
 Route::post('/tim_kiem', [HomeAdminController::class, 'search'])->name('tim_kiem.search');
 
 
-//chi tiet & review san pham
+//chi tiet
 Route::get('/detail/{slug}', [HomeAdminController::class, 'detail'])->name('detail');
-Route::post('/detail/{slug}/review', [HomeAdminController::class, 'storeReview'])->name('detail.storeReview');
-Route::post('/get-inventory-id', [HomeController::class, 'getInventoryId'])->name('getInventoryId');
+Route::get('/product-inventory', [HomeAdminController::class, 'getProductInventory'])->name('product.inventory');
 
 
 //man hinh user page

@@ -346,9 +346,13 @@
                                                             <td style="text-align: center; font-size: 24px">
                                                                 <a href="{{ route('ordered.info', $order->order_id) }}"><i
                                                                         class="bi bi-eye"></i></a>
+                                                                <a href="#" class="cancel-order"
+                                                                    data-order-id="{{ $order->order_id }}"><i
+                                                                        class="bi bi-x-circle"></i></a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
+
                                                 </tbody>
                                             </table>
                                             <div class="col-12 text-center">
@@ -447,16 +451,16 @@
                                     });
                                 } else {
                                     Swal.fire({
-                                        title: 'Error!',
-                                        text: 'There was an error cancelling your order.',
+                                        title: 'Lỗi!',
+                                        text: 'Có lỗi xảy ra khi hủy đơn hàng của bạn.',
                                         icon: 'error'
                                     });
                                 }
                             })
                             .catch(error => {
                                 Swal.fire({
-                                    title: 'Error!',
-                                    text: 'There was an error cancelling your order.',
+                                    title: 'Lỗi!',
+                                    text: 'Có lỗi xảy ra khi hủy đơn hàng của bạn.',
                                     icon: 'error'
                                 });
                             });

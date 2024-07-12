@@ -13,7 +13,7 @@ class CustomerAccountController extends Controller
 {
     public function customer_account()
     {
-        $customer = Auth::guard('customer')->user(); // Lấy thông tin khách hàng đã đăng nhập
+        $customer = Auth::guard('customer')->user();
 
         $customer_id = session('customer_id');
         session(['customer_id' => $customer_id]);
@@ -72,13 +72,16 @@ class CustomerAccountController extends Controller
         return response()->json(['success' => false]);
     }
 
-    //Cập nhật lại số lượng sản phẩm khi khách hàng hủy đơn hàng
     public function restoreProductQuantities($order_id)
     {
         $orderDetails = DB::table('order_details')->where('order_id', $order_id)->get();
 
         foreach ($orderDetails as $detail) {
-            DB::table('products')->where('id', $detail->product_id)->increment('quantity', $detail->product_sales_quantity);
+            DB::table('inventories')
+                ->where('product_id', $detail->product_id)
+                ->where('size', $detail->size) // Thêm điều kiện size
+                ->where('color', $detail->color) // Thêm điều kiện color
+                ->increment('quantity', $detail->product_sales_quantity);
         }
     }
 }

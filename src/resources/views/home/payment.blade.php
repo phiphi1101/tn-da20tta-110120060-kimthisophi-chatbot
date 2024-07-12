@@ -66,9 +66,7 @@
                                                 </div><!-- End .product -->
                                             </td>
                                             <td class="price-col">{{ $v_content->options->color }}</td>
-                                            {{-- <input type="hidden" value="{{ $v_content->options->color }}"> --}}
                                             <td class="price-col">{{ $v_content->options->size }}</td>
-                                            {{-- <input type="hidden" value="{{ $v_content->options->size }}"> --}}
                                             <td class="price-col">{{ number_format($v_content->price) }} VNĐ</td>
                                             <td class="quantity-col">
                                                 <div class="cart-product-quantity">
@@ -133,12 +131,9 @@
 @endsection
 
 <script>
-// Wait for the document to be fully loaded
 document.addEventListener("DOMContentLoaded", function() {
-    // Find the checkbox with the name "payment_option" and the value "2"
     var paymentCheckbox = document.querySelector('input[name="payment_option"][value="2"]');
 
-    // If the checkbox is found, automatically click it
     if (paymentCheckbox) {
         paymentCheckbox.click();
     }
