@@ -88,8 +88,7 @@ Feel free to ask any questions, raise problems, and request new features in [dis
 
 See [contributing guide](https://github.com/FlowiseAI/Flowise/blob/master/CONTRIBUTING.md). Reach out to us at [Discord](https://discord.gg/jbaHfsRVBW) if you have any questions or issues.
 
-## 📄 Liên hệ
-
-Chủ sở hữu: Kim Thị Sô Phi
-Email: kimthisophi@gmail.com
-Điện thoại: 0382533858
+## Thông tin liên hệ tác giả
+  - Họ tên: Kim Thị Sô Phi
+  - SĐT: 0382533858
+  - Email:kimthisophi1101@gmail.com
