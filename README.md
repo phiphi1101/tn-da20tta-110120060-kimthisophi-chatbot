@@ -88,6 +88,8 @@ Feel free to ask any questions, raise problems, and request new features in [dis
 
 See [contributing guide](https://github.com/FlowiseAI/Flowise/blob/master/CONTRIBUTING.md). Reach out to us at [Discord](https://discord.gg/jbaHfsRVBW) if you have any questions or issues.
 
-## 📄 License
+## 📄 Liên hệ
 
-Source code in this repository is made available under the [Apache License Version 2.0](https://github.com/FlowiseAI/Flowise/blob/master/LICENSE.md).
+Chủ sở hữu: Kim Thị Sô Phi
+Email: kimthisophi@gmail.com
+Điện thoại: 0382533858
