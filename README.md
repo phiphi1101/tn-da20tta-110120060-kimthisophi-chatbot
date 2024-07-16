@@ -11,7 +11,7 @@ Drag & drop UI to build your customized LLM flow
   - Cài đặt PHP phiên bản 7.3 trở lên và Composer
   - Tải dự án từ github
 
-          git clone https://github.com/phiphi1101/cn-da20tta-kimthisophi-job-laravel.git
+          git clone https://github.com/phiphi1101/tn-da20tta-110120060-kimthisophi-chatbot.git
   - Cài đặt phần còn thiếu của dự án
 
           composer install
